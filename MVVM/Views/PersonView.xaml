@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_MVVM_Pattern.MVVM.Views.PersonView"
+             Title="PersonView">
+    <ContentPage.Resources>
+        <Color x:Key="primary-color">#FEF9EF</Color>
+        <Color x:Key="bg-color">#FFCB77</Color>
+        <Color x:Key="txt-color">#A99671</Color>
+        <x:Double x:Key="f-size">20</x:Double>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource bg-color}" RowDefinitions="50,*" >
+        
+        <BoxView BackgroundColor="{StaticResource primary-color}"
+                 HeightRequest="50"/>
+        <Label Text="SCHEDA PERSONALE"
+               FontSize="25"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="{StaticResource txt-color}"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions=".5*,.5*" Padding="30" RowDefinitions="*,*,*,*,*">
+            <Label Text="Nome:" FontSize="{StaticResource f-size}" VerticalOptions="Center"/>
+            <Label Text="{Binding Person.Name}"
+                   Grid.Row="0" Grid.Column="1" FontSize="{StaticResource f-size}" VerticalOptions="Center"/>
+
+            <Label Text="Cognome:" FontSize="{StaticResource f-size}"
+                   Grid.Row="1" VerticalOptions="Center"/>
+            <Label Text="{Binding Person.LastName}"
+                   Grid.Row="1" Grid.Column="1" FontSize="{StaticResource f-size}" VerticalOptions="Center"/>
+
+            <Label Text="Data di nascita:" FontSize="{StaticResource f-size}"
+                    Grid.Row="2" VerticalOptions="Center"/>
+            <DatePicker Grid.Row="2" Grid.Column="1" Date="{Binding Person.DateOfBirth}"
+                        FontSize="{StaticResource f-size}" VerticalOptions="Center"/>
+
+            <Label Text="Peso:" FontSize="{StaticResource f-size}"
+                   Grid.Row="3" VerticalOptions="Center"/>
+            <Entry Grid.Row="3" Grid.Column="1" VerticalOptions="Center"
+                   Text="{Binding Person.Weight, StringFormat='{0} kg'}"
+                   HorizontalTextAlignment="Center"
+                   Keyboard="Numeric"/>
+
+            <Label Text="Pazzo:" FontSize="{StaticResource f-size}"
+                   Grid.Row="4" VerticalOptions="Center"/>
+            <Switch IsToggled="{Binding Person.IsMad}"
+                    Grid.Row="4" Grid.Column="1" HorizontalOptions="Center"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

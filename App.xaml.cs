@@ -1,4 +1,6 @@
-﻿namespace MAUI_MVVM_Pattern
+﻿using MAUI_MVVM_Pattern.MVVM.Views;
+
+namespace MAUI_MVVM_Pattern
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new PeopleView();
         }
     }
 }
