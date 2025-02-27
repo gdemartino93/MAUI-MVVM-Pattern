@@ -12,14 +12,18 @@ namespace MAUI_MVVM_Pattern.MVVM.Converters
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             string? answer = value?.ToString();
-            if (answer?.Equals("true", StringComparison.OrdinalIgnoreCase) == true) return true;
+            if (answer?.Equals("si", StringComparison.OrdinalIgnoreCase) == true) return true;
 
             return false;
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            return null;
+            bool? boolValue = (bool?)value;
+
+            if (boolValue.HasValue && boolValue.Value) return "SI";
+            return "NO";
+
         }
     }
 }

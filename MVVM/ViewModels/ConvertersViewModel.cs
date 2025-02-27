@@ -9,7 +9,7 @@ namespace MAUI_MVVM_Pattern.MVVM.ViewModels
         {
             Data = new Data
             {
-                IsFake = "true"
+                IsFake = "si"
             };
         }
     }
