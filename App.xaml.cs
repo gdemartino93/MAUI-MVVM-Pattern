@@ -8,7 +8,7 @@ namespace MAUI_MVVM_Pattern
         {
             InitializeComponent();
 
-            MainPage = new PeopleView();
+            MainPage = new ConvertersView();
         }
     }
 }
