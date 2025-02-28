@@ -7,8 +7,7 @@ namespace MAUI_MVVM_Pattern
         public App()
         {
             InitializeComponent();
-
-            MainPage = new ConvertersView();
+            MainPage = new CommandsView();
         }
     }
 }
